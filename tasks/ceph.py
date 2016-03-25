@@ -1136,7 +1136,8 @@ def wait_for_mon_quorum(ctx, config):
     """
 
     assert isinstance(config, list)
-    firstmon = teuthology.get_first_mon(ctx, config)
+    cluster_name = config.get('cluster', 'ceph')
+    firstmon = teuthology.get_first_mon(ctx, config, cluster_name)
     (remote,) = ctx.cluster.only(firstmon).remotes.keys()
     while True:
         r = remote.run(
