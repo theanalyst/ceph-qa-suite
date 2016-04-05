@@ -24,3 +24,8 @@ tasks:
           num: 10
           size: 2000
           stddev: 500
+overrides:
+  ceph:
+    conf:
+      client:
+        debug rgw: 20
