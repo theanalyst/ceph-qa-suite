@@ -29,3 +29,4 @@ overrides:
     conf:
       client:
         debug rgw: 20
+        debug ms: 5
